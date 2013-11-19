@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/repcar</property>
+    <property name="hibernate.connection.username">postgres</property>
+    <property name="hibernate.connection.password">cocorote</property>
+    <mapping resource="modelo/Servicios.hbm.xml"/>
+    <mapping resource="modelo/CitasServicios.hbm.xml"/>
+    <mapping resource="modelo/ArticulosServicios.hbm.xml"/>
+    <mapping resource="modelo/Facturas.hbm.xml"/>
+    <mapping resource="modelo/Inventarios.hbm.xml"/>
+    <mapping resource="modelo/Vehiculos.hbm.xml"/>
+    <mapping resource="modelo/Citas.hbm.xml"/>
+    <mapping resource="modelo/Articulos.hbm.xml"/>
+    <mapping resource="modelo/Categorias.hbm.xml"/>
+    <mapping resource="modelo/Clientes.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

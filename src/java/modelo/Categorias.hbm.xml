@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/11/2013 07:17:08 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="modelo.Categorias" table="categorias" schema="bussines">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="_name" not-null="true" />
+        </property>
+        <property name="createdBy" type="int">
+            <column name="created_by" not-null="true" />
+        </property>
+        <property name="createdAt" type="timestamp">
+            <column name="created_at" length="29" not-null="true" />
+        </property>
+        <property name="updatedBy" type="java.lang.Integer">
+            <column name="updated_by" />
+        </property>
+        <property name="updatedAt" type="timestamp">
+            <column name="updated_at" length="29" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="deleted" not-null="true" />
+        </property>
+        <property name="table" type="string">
+            <column name="_table" length="63" not-null="true" />
+        </property>
+        <set name="servicioses" table="servicios" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="categorias_id_tipo_servicios" not-null="true" />
+            </key>
+            <one-to-many class="modelo.Servicios" />
+        </set>
+        <set name="citases" table="citas" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cagoria_id_estado_citas" not-null="true" />
+            </key>
+            <one-to-many class="modelo.Citas" />
+        </set>
+    </class>
+</hibernate-mapping>

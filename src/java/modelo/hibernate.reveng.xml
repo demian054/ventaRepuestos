@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="repcar" match-schema="bussines"/>
+  <table-filter match-name="citas"/>
+  <table-filter match-name="vehiculos"/>
+  <table-filter match-name="articulos_servicios"/>
+  <table-filter match-name="inventarios"/>
+  <table-filter match-name="servicios"/>
+  <table-filter match-name="clientes"/>
+  <table-filter match-name="facturas"/>
+  <table-filter match-name="articulos"/>
+  <table-filter match-name="categorias"/>
+  <table-filter match-name="citas_servicios"/>
+</hibernate-reverse-engineering>

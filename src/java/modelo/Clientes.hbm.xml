@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/11/2013 07:17:08 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="modelo.Clientes" table="clientes" schema="bussines">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="_name" not-null="true" />
+        </property>
+        <property name="createdBy" type="int">
+            <column name="created_by" not-null="true" />
+        </property>
+        <property name="createdAt" type="timestamp">
+            <column name="created_at" length="29" not-null="true" />
+        </property>
+        <property name="updatedBy" type="java.lang.Integer">
+            <column name="updated_by" />
+        </property>
+        <property name="updatedAt" type="timestamp">
+            <column name="updated_at" length="29" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="deleted" not-null="true" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="last_name" length="63" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" />
+        </property>
+        <property name="telef1" type="string">
+            <column name="telef_1" length="63" />
+        </property>
+        <property name="telef2" type="string">
+            <column name="telef_2" length="63" />
+        </property>
+        <set name="facturases" table="facturas" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="clientes_id" not-null="true" />
+            </key>
+            <one-to-many class="modelo.Facturas" />
+        </set>
+    </class>
+</hibernate-mapping>
