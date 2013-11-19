@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/11/2013 07:17:08 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="modelo.CitasServicios" table="citas_servicios" schema="bussines">
+        <composite-id name="id" class="modelo.CitasServiciosId">
+            <key-property name="citasId" type="int">
+                <column name="citas_id" />
+            </key-property>
+            <key-property name="serviciosId" type="int">
+                <column name="servicios_id" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="citas" class="modelo.Citas" update="false" insert="false" fetch="select">
+            <column name="citas_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="servicios" class="modelo.Servicios" update="false" insert="false" fetch="select">
+            <column name="servicios_id" not-null="true" />
+        </many-to-one>
+        <property name="createdBy" type="int">
+            <column name="created_by" not-null="true" />
+        </property>
+        <property name="createdAt" type="timestamp">
+            <column name="created_at" length="29" not-null="true" />
+        </property>
+        <property name="updatedBy" type="java.lang.Integer">
+            <column name="updated_by" />
+        </property>
+        <property name="updatedAt" type="timestamp">
+            <column name="updated_at" length="29" />
+        </property>
+        <property name="deleted" type="boolean">
+            <column name="deleted" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
