@@ -21,7 +21,7 @@
         <property name="mappings">
             <props>
                 <prop key="index.htm">indexController</prop>
-                <prop key="consulta_inventarios.htm">consultainventarios</prop>
+                <prop key="consultar_inventarios.htm">consultainventarios</prop>
             </props>
         </property>
     </bean>
